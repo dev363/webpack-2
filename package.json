@@ -1,0 +1,23 @@
+{
+  "name": "webpack-2",
+  "version": "1.0.0",
+  "description": "This is only Common HTML, Css, Js File structure Follow step by Step By changing Braches code",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack ./src/js/app.js ./dist/bundle.js",
+    "build:prod": "webpack ./src/js/app.js ./dist/bundle.js -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev363/webpack-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dev363/webpack-2/issues"
+  },
+  "homepage": "https://github.com/dev363/webpack-2#readme",
+  "devDependencies": {
+    "webpack": "^2.7.0"
+  }
+}
