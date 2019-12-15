@@ -2,18 +2,16 @@
 
 Webpack is a module bundler. Webpack can take care of bundling alongside a separate task runner. However, the line between bundler and task runner has become blurred thanks to community developed webpack plugins. Sometimes these plugins are used to perform tasks that are usually done outside of webpack, such as cleaning the build directory or deploying the build.
 
-#### In this Brach use  babel, css, scss with "webpack-dev-server"
+#### In this Brach use  file and html loader with "webpack-dev-server"
 
 ### Steps :-
 1) 
 ```
-	npm install -D babel-core
-	npm install -D babel-preset-es2015
-	npm install -D extract-text-webpack-plugin@2.1.0
-	npm install -D sass-loader@7.3
-	npm install -D babel-loader@7
+	npm install -D file-loader@0.10.1
+	npm install -D html-loader
+	npm install -D html-webpack-plugin@3.2.0
 ```
-2) add scss folder
+2) add img folder
 3) make changes in package.json:-
 	```
 	"scripts": {

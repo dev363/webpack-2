@@ -1,5 +1,7 @@
 var path = require("path")
 var ExtractTextPlugin= require("extract-text-webpack-plugin")
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var extractPlugin= new ExtractTextPlugin({
 	filename:"main.css"
@@ -10,7 +12,7 @@ module.exports={
 	output:{
 		path: path.join(__dirname, "dist"),
 		filename:"bundle.js",
-		publicPath:"dist/"
+		// publicPath:"dist/"
 	},
 	module:{
 		rules:[
@@ -26,6 +28,10 @@ module.exports={
 				]
 			},
 			{
+				test:/\.html$/,
+				use:["html-loader"]
+			},
+			{
 				test:/\.css$/,
 				use:[
 					"style-loader","css-loader"
@@ -37,9 +43,27 @@ module.exports={
 					use:["css-loader", "sass-loader"]
 				})
 			}
+			,
+			{
+				test:/\.(jpg|png)$/,
+				use:[
+					{
+						loader:"file-loader",
+						options:{
+							name:'[name].[ext]',
+							outputPath:"img/",
+							publicPath:"img/"
+						}
+					}
+				]
+			}
 		]
 	},
 	plugins:[
-		extractPlugin
+		extractPlugin,
+		new HtmlWebpackPlugin({
+			template: "src/index.html"
+		}),
+		//new CleanWebpackPlugin(['dist'])
 	]
 }
