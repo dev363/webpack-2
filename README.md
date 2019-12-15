@@ -5,21 +5,12 @@ Webpack is a module bundler. Webpack can take care of bundling alongside a separ
 #### In this Branch use multiple Html files with file-loader and html-webpack-plugin
 
 ### Steps :-
-1) add new HTML file
-2) Add new rule in webpack.config.js:-
+1) npm install --save jquery
+2) Add new Plugin in webpack.config.js:-
 	```
-	// Use could use this to add all HTML files
-			{
-				test:/\.html$/,
-				use:[
-					{
-						loader:"file-loader",
-						options:{
-							name:'[name].[ext]'
-						}
-					}
-				],
-				exclude: path.join(__dirname,"/src/index.html")
-			}
+	new webpack.ProvidePlugin({
+			"$":"jquery",
+			"jQuery":"jquery"
+		})
   ```
  3) npm run build

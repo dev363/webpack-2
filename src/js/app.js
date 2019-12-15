@@ -1,3 +1,4 @@
+import "jquery"
 import '../scss/main.scss';
 import '../AboutUs.html';
 import '../css/input-elements.css';
@@ -5,7 +6,7 @@ import '../css/input-elements.css';
 import {secretButton, secretParagraph} from "./dom-loader"
 var showSecret = false;
 
-secretButton.addEventListener('click', toggleSecretState);
+secretButton.click(toggleSecretState);
 updateSecretParagraph();
 
 function toggleSecretState() {
@@ -16,16 +17,16 @@ function toggleSecretState() {
 
 function updateSecretButton() {
     if (showSecret) {
-        secretButton.textContent = 'Hide';
+        secretButton.text('Hide');
     } else {
-        secretButton.textContent = 'Show';
+        secretButton.text('Show');
     }
 }
 
 function updateSecretParagraph() {
     if (showSecret) {
-        secretParagraph.style.display = 'block';
+        secretParagraph.css("display","block");
     } else {
-        secretParagraph.style.display = 'none';
+        secretParagraph.css('display','none');
     }
 }

@@ -1,2 +1,2 @@
-export var secretButton = document.querySelector('#secret-button');
-export var secretParagraph = document.querySelector('#secret-paragraph');
+export var secretButton = $('#secret-button');
+export var secretParagraph = jQuery('#secret-paragraph');
