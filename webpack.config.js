@@ -42,8 +42,7 @@ module.exports={
 				use: extractPlugin.extract({
 					use:["css-loader", "sass-loader"]
 				})
-			}
-			,
+			},
 			{
 				test:/\.(jpg|png)$/,
 				use:[
@@ -56,14 +55,35 @@ module.exports={
 						}
 					}
 				]
+			},
+			// Use could use this to add all HTML files
+			{
+				test:/\.html$/,
+				use:[
+					{
+						loader:"file-loader",
+						options:{
+							name:'[name].[ext]'
+						}
+					}
+				],
+				exclude: path.join(__dirname,"/src/index.html")
 			}
 		]
 	},
 	plugins:[
 		extractPlugin,
 		new HtmlWebpackPlugin({
+			filename:"index.html",
 			template: "src/index.html"
 		}),
+
+		// Use could use one by one add HTML files
+		// new HtmlWebpackPlugin({
+		// 	filename:"AboutUs.html",
+		// 	template: "src/AboutUs.html",
+		// 	chunks:[]
+		// })
 		//new CleanWebpackPlugin(['dist'])
 	]
 }

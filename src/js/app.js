@@ -1,5 +1,5 @@
 import '../scss/main.scss';
-// import '../css/main.css';
+import '../AboutUs.html';
 import '../css/input-elements.css';
 
 import {secretButton, secretParagraph} from "./dom-loader"
